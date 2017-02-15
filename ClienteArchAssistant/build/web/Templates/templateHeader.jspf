@@ -1,0 +1,23 @@
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>ArchAssistant - Gestionar Proyectos</title>
+        <link rel="stylesheet" href="assets/css/style.css" type="text/css"/>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="header">
+                <div class="logo"><a href="index.html"><img src="assets/css/images/logo.gif" alt="" title="" border="0" /></a></div>
+
+            </div>
+
+            <div id="menu">
+                <ul>                                                                       
+                    <li class="selected"><a href="#">Inicio</a></li>
+                    <li><a href="#">Acerca de</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">QAW </a></li>
+                    <li><a href="#">ADD </a></li>
+                    <li><a href="#">Contáctanos</a></li>                                                          
+                </ul>

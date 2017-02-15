@@ -1,0 +1,110 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Beans;
+
+import java.util.List;
+import servicios.Atributocalidad;
+import servicios.Escenario;
+import servicios.Proyecto;
+import servicios.Rationaleadd;
+import servicios.Rationaleqaw;
+
+/**
+ *
+ * @author Prometheus
+ */
+public class ArchAssistantBean {
+    
+    public List<Proyecto> Listar(String usuario)
+    {
+        return listarProyectos(usuario);
+    }
+    
+    public void aumentarVoto(Escenario esc)
+    {
+        if (esc.getEscPrioridad() != null)
+        {
+            esc.setEscPrioridad(esc.getEscPrioridad()+1);
+        }
+        else
+        {
+            esc.setEscPrioridad(1);
+        }
+        modificarEscenario(esc);
+    }
+    
+    public List<Atributocalidad> ListarAtr()
+    {
+        return listarAtributos();
+    }
+    
+    public List<Escenario> ListEscenarios(Proyecto proy)
+    {
+        return listarEscenario(proy);
+    }
+    
+    public Rationaleqaw RationaleQAW(int proyecto, String paso)
+    {
+        return obtenerRationaleQAW(proyecto, paso);
+    }
+    
+    public Rationaleadd RationaleADD(int proyecto, String paso)
+    {
+        return obtenerRationaleAdd(proyecto, paso);
+    }
+    
+    public Escenario obtenerEscenario(int id, Proyecto proy)
+    {
+        List<Escenario> lista = listarEscenario(proy);
+        
+        for (Escenario esc : lista)
+        {
+            if (esc.getEscID() == id)
+            {
+                return esc;
+            }
+        }
+        return null;
+    }
+
+    private static java.util.List<servicios.Proyecto> listarProyectos(java.lang.String parameter) {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        return port.listarProyectos(parameter);
+    }
+
+    private static Rationaleqaw obtenerRationaleQAW(int idpro, java.lang.String paso) {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        return port.obtenerRationaleQAW(idpro, paso);
+    }
+
+    private static Rationaleadd obtenerRationaleAdd(int idpro, java.lang.String paso) {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        return port.obtenerRationaleAdd(idpro, paso);
+    }
+
+    private static java.util.List<servicios.Atributocalidad> listarAtributos() {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        return port.listarAtributos();
+    }
+
+    private static java.util.List<servicios.Escenario> listarEscenario(servicios.Proyecto parameter) {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        return port.listarEscenario(parameter);
+    }
+
+    private static void modificarEscenario(servicios.Escenario parameter) {
+        servicios.ArcAssistantService_Service service = new servicios.ArcAssistantService_Service();
+        servicios.ArcAssistantService port = service.getArcAssistantServicePort();
+        port.modificarEscenario(parameter);
+    }
+    
+    
+}

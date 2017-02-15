@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="ArchAssistantPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <non-jta-data-source>java:app/ArchAssistantDataBase</non-jta-data-source>
+    <class>Modelo.Atributocalidad</class>
+    <class>Modelo.Controlador</class>
+    <class>Modelo.Escenario</class>
+    <class>Modelo.Interface</class>
+    <class>Modelo.Modulo</class>
+    <class>Modelo.Patron</class>
+    <class>Modelo.Preocupacion</class>
+    <class>Modelo.Proyecto</class>
+    <class>Modelo.Rationaleadd</class>
+    <class>Modelo.Rationaleqaw</class>
+    <class>Modelo.Tactica</class>
+    <class>Modelo.Usuario</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/archassistantbd?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="@root"/>
+    </properties>
+  </persistence-unit>
+</persistence>
